@@ -1,3 +1,7 @@
+```ts
+/**
+ * EXAMPLE DE FAKEREPOSITORY *
+ */
 import { v4 as uuid } from 'uuid';
 import User from '@modules/users/entities/User';
 import IUserDTO from '../interfaces/IUserDTO';
@@ -27,5 +31,32 @@ class FakeUserRepository implements IUserRepository {
     return findUser;
   }
 }
-
 export default FakeUserRepository;
+
+/**
+ * EXAMPLE DE REPOSITORY *
+ */
+
+  public async create(data: ICreateUserDTO): Promise<User> {
+    const user = this.repository.create(data);
+    await this.repository.save(user);
+    return user;
+  }
+
+  public async findAll(): Promise<User[]> {
+    const users = this.repository.find();
+    return users;
+  }
+
+  public async findByEmail(email: string): Promise<User | undefined> {
+    const findUser = await this.repository.findOne({
+      where: { email },
+    });
+    return findUser;
+  }
+}
+
+export default UserRepository;
+
+
+```

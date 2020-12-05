@@ -1,3 +1,4 @@
+```ts
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('users')
@@ -11,5 +12,5 @@ class User {
   @Column()
   email: string;
 }
-
 export default User;
+```

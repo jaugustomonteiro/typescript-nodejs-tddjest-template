@@ -1,7 +1,4 @@
-import { Request, Response } from 'express';
-import UserRepository from '../repositories/UserRepository';
-import CreateUserService from '../services/CreateUserService';
-
+```ts
 class UserController {
   public async index(request: Request, response: Response): Promise<Response> {
     const usersRepository = new UserRepository();
@@ -12,9 +9,7 @@ class UserController {
   public async store(request: Request, response: Response): Promise<Response> {
     const { name, email } = request.body;
 
-    const usersRepository = new UserRepository();
-
-    const createUser = new CreateUserService(usersRepository);
+    const createUser = container.resolve(CreateUserService);
 
     const user = await createUser.execute({
       name,
@@ -24,5 +19,5 @@ class UserController {
     return response.json(user);
   }
 }
-
 export default UserController;
+```

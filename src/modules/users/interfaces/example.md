@@ -1,3 +1,12 @@
+```ts
+interface IUserDTO {
+  name: string;
+  email: string;
+}
+
+export default IUserDTO;
+
+
 import User from '@modules/users/entities/User';
 import IUserDTO from './IUserDTO';
 
@@ -8,3 +17,6 @@ interface IUserRepository {
 }
 
 export default IUserRepository;
+
+
+```

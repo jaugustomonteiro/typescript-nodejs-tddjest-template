@@ -1,8 +1,10 @@
+import 'reflect-metadata';
 import 'dotenv/config';
 import express from 'express';
 import 'express-async-errors';
 import routesError from '@shared/middlewares/routesError';
 import routes from './routes';
+import './container';
 
 import '@shared/database';
 

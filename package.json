@@ -1,5 +1,5 @@
 {
-  "name": "base-typescript",
+  "name": "gobarber.v2",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -14,6 +14,8 @@
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
     "pg": "^8.4.2",
+    "reflect-metadata": "^0.1.13",
+    "tsyringe": "^4.4.0",
     "typeorm": "^0.2.29",
     "uuid": "^8.3.1"
   },
